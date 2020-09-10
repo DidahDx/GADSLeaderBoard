@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="hourLeaderDetails"
+            type="com.didahdx.gadsleaderboard.data.db.entities.HoursLeaderDb" />
+
+    </data>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:contentPadding="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="4dp">
+
+        <TextView
+            android:id="@+id/textViewHourName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="@{hourLeaderDetails.name}"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHour"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+        <ImageView
+            android:id="@+id/imageViewHour"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="@string/image_hours"
+            android:hourBadgeUrl="@{hourLeaderDetails.badgeUrl}"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="@{String.valueOf(hourLeaderDetails.hours).concat(@string/learning_hours)}"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHour"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHourName"
+            tools:text="Hours" />
+
+        <TextView
+            android:id="@+id/textViewCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="@{hourLeaderDetails.country}"
+            app:layout_constraintStart_toEndOf="@+id/textViewHours"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHourName"
+            tools:text="Country" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+</layout>
