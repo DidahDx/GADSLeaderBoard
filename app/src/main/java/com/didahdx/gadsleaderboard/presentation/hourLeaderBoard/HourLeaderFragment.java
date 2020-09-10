@@ -6,16 +6,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import com.didahdx.gadsleaderboard.R;
 import com.didahdx.gadsleaderboard.data.db.GadsDatabase;
@@ -61,6 +65,7 @@ public class HourLeaderFragment extends Fragment {
         mHourLeaderViewModel.allHourLeader.observe(getViewLifecycleOwner(), new Observer<List<HoursLeaderDb>>() {
             @Override
             public void onChanged(List<HoursLeaderDb> hoursLeaderDbs) {
+                runLayoutAnimation(binding.recyclerviewHourLeader);
                 hourAdapter.submitList(hoursLeaderDbs);
             }
         });
@@ -69,4 +74,13 @@ public class HourLeaderFragment extends Fragment {
     }
 
 
+    private void runLayoutAnimation(final RecyclerView recyclerView) {
+        final Context context = recyclerView.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_right);
+
+        recyclerView.setLayoutAnimation(controller);
+        requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
+    }
 }

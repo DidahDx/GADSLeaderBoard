@@ -12,4 +12,5 @@ public interface GetData{
 
     @GET("/api/skilliq")
     Call<List<IQLeader>> getAllIQLeaders();
+
 }
