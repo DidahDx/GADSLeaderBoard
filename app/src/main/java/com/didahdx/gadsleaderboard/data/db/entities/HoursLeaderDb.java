@@ -2,12 +2,14 @@ package com.didahdx.gadsleaderboard.data.db.entities;
 
 import android.widget.ImageView;
 
+import androidx.annotation.Keep;
 import androidx.databinding.BindingAdapter;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.bumptech.glide.Glide;
 
+@Keep
 @Entity
 public class HoursLeaderDb {
 

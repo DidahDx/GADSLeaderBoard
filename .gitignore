@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 *.apk
+release
+google-services.json

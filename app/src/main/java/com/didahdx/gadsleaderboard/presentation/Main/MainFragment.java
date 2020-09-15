@@ -1,23 +1,20 @@
 package com.didahdx.gadsleaderboard.presentation.Main;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.didahdx.gadsleaderboard.R;
 import com.didahdx.gadsleaderboard.presentation.hourLeaderBoard.HourLeaderFragment;
 import com.didahdx.gadsleaderboard.presentation.iqLeaderBoard.IQLeaderFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
-import java.util.Objects;
 
 public class MainFragment extends Fragment {
 

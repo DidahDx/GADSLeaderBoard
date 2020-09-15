@@ -1,5 +1,6 @@
 package com.didahdx.gadsleaderboard.data.repository;
 
+import androidx.annotation.Keep;
 import androidx.lifecycle.LiveData;
 
 import com.didahdx.gadsleaderboard.data.db.GadsDatabase;

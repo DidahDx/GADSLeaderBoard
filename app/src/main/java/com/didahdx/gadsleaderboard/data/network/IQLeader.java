@@ -1,5 +1,9 @@
 package com.didahdx.gadsleaderboard.data.network;
 
+
+import androidx.annotation.Keep;
+
+@Keep
 public class IQLeader {
     private String name;
     private int score;

@@ -1,5 +1,8 @@
 package com.didahdx.gadsleaderboard.data.network;
 
+import androidx.annotation.Keep;
+
+@Keep
 public class HoursLeaders {
 
     private String name;
